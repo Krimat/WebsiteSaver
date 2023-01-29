@@ -21,12 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.envirom.get("SECRET_KEY",'django-insecure-j!6=x9&u+7jn^m7+e8c)750j6fzrci7mw_zw+ntm(v-@x0e!kb')
+SECRET_KEY = os.environ.get("SECRET_KEY",'django-insecure-j!6=x9&u+7jn^m7+e8c)750j6fzrci7mw_zw+ntm(v-@x0e!kb')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("MODE", 'true') == 'true'
+DEBUG = os.environ.get("MODE", 'debug') != 'production'
 
-ALLOWED_HOSTS = [] + os.environ.get("ALLOWED_HOSTS").split(' ')
+ALLOWED_HOSTS = [
+    'localhost',
+] + os.environ.get("ALLOWED_HOSTS").split(' ')
 
 
 # Application definition
@@ -38,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest-framework',
+    'rest_framework',
     'corsheaders',
+
+    'websiteSaver',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +136,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#Image handling
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
