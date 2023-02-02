@@ -5,11 +5,11 @@ from .models import (Site, Tag)
 
 class SiteSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ['name', 'description', 'added', 'image']
+        exclude = []
         model = Site
         
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
-        field = ['name']
+        exclude = []
         model = Tag

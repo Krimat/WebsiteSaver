@@ -7,3 +7,6 @@ class SitePagination(pagination.CursorPagination):
     
 
 
+class TagPagination(pagination.CursorPagination):
+    page_size = 20
+    ordering = 'id'
