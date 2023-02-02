@@ -136,6 +136,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+#STATIC_ROOT = BASE_DIR / 'frontend/static'#os.environ.get('STATIC_ROOT')
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontend/build/static',
+    BASE_DIR / 'frontend/build',
+    ]
 
 #Image handling
 
@@ -146,3 +151,7 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#React setting
+
+REACT_ROOT=os.environ.get('REACT_ROOT')
