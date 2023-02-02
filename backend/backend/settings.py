@@ -138,8 +138,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 #STATIC_ROOT = BASE_DIR / 'frontend/static'#os.environ.get('STATIC_ROOT')
 STATICFILES_DIRS = [
-    BASE_DIR / 'frontend/build/static',
-    BASE_DIR / 'frontend/build',
+    BASE_DIR.parent / 'frontend/build/static',
+    BASE_DIR.parent / 'frontend/build',
     ]
 
 #Image handling
