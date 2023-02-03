@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "(for /D %D in (build/static/css build/static/js) do (move %D build)) && cd build && rmdir static"
   },
   "eslintConfig": {
     "extends": [
@@ -40,4 +41,5 @@
       "last 1 safari version"
     ]
   }
+  
 }
