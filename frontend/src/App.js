@@ -44,7 +44,7 @@ function App() {
   return (
     
     <>
-      <div className='navbar bg-dark text-light'>
+      <div className='navbar bg-dark text-light fs-3'>
         WebsiteSaver
       </div>
 
