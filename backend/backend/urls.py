@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 from .views import index
@@ -24,3 +25,5 @@ urlpatterns = [
     path('api/', include('websiteSaver.urls')),
     path('', index),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
