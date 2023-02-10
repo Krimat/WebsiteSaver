@@ -143,7 +143,7 @@ STATICFILES_DIRS = [
 
 #Image handling
 
-MEDIA_URL = '/media/'
+MEDIA_URL = STATIC_URL / 'media/'
 MEDIA_ROOT = STATIC_ROOT / 'media/'
 
 # Default primary key field type
